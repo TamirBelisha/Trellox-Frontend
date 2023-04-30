@@ -1,0 +1,181 @@
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin btn($bg: $clr2, $clr: $clr4, $padding: em(10px), $hover: darken($bg, 8%)) {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: $padding;
+    line-height: 1.25;
+    font-variation-settings: "wght" 430;
+    border: none;
+    cursor: pointer;
+    background-color: $bg;
+    color: $clr;
+    transition: background-color 0.5s;
+    &:hover {
+        background-color: $hover;
+    }
+    border-radius: 10px;
+}
+
+@mixin blue-btn($padding-inline: rem(14px)) {
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    font-size: rem(14px);
+    font-weight: 400;
+    font-family: roboto-header;
+    text-decoration: none;
+    background-color: $clr7;
+    box-shadow: none;
+    color: $clr4;
+    padding: rem(8px) $padding-inline;
+    line-height: initial;
+    @include flex;
+    &:hover {
+        background-color: #026aa7;
+    }
+}
+
+@mixin delete-btn($padding-inline: rem(14px)) {
+    font-family: roboto-header;
+    background-color: #b04632;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 12px;
+    transition-duration: 85ms;
+    transition-property: background-color;
+    transition-timing-function: ease;
+    margin: 8px 4px 0 0;
+    border: none;
+    float: right;
+    &:hover {
+        background-color: #933b27;
+    }
+}
+
+@mixin header-color($type) {
+    @if $type == board {
+        background-color: #e8e9e2;
+        .right-header {
+            label {
+                color: $clr2;
+            }
+        }
+        .left-header,
+        .right-header {
+            > * {
+                color: $clr2;
+            }
+        }
+    } @else if $type == workspace {
+        background-color: #026aa7;
+        ::placeholder {
+            color: $clr4 !important;
+        }
+        .left-header,
+        .right-header {
+            > * {
+                color: $clr4;
+            }
+        }
+        .right-header {
+            label {
+                color: $clr4;
+            }
+        }
+    }
+}
+
+@mixin header-btn {
+    margin-right: 4px;
+    padding-right: 10px;
+    background-color: transparent;
+    height: 32px;
+    line-height: 32px;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    @include flex;
+    gap: rem(8px);
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: normal;
+    box-shadow: none;
+    border: none;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+@mixin lighten {
+    cursor: pointer;
+    &:hover {
+        filter: brightness(104%);
+    }
+}
+
+@mixin custom-input {
+    margin: 4px 0 12px;
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #fafbfc;
+    border: none;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 2px #dfe1e6;
+    box-sizing: border-box;
+    display: block;
+    line-height: 20px;
+    outline: none;
+    padding: 8px 12px;
+    color: #172b4d;
+    font-size: 14px;
+    font-weight: 400;
+
+    transition-duration: 85ms;
+    transition-property: background-color, border-color, box-shadow;
+    transition-timing-function: ease;
+
+    &:hover {
+        background-color: #ebecf0;
+        box-shadow: inset 0 0 0 2px #dfe1e6;
+    }
+
+    &:focus {
+        background-color: #fff;
+        box-shadow: inset 0 0 0 2px #0079bf;
+    }
+}
+
+@mixin checkbox {
+    input {
+        position: relative;
+        height: 16px;
+        width: 16px;
+        transition: all 0.1s ease-in-out;
+        background-color: #fafbfc;
+        box-shadow: inset 0 0 0 2px #dfe1e6;
+
+        &.full {
+            box-shadow: inset 0 0 0 2px #0079bf;
+        }
+
+    }
+
+}

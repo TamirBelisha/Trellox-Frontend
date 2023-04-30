@@ -1,0 +1,105 @@
+.board-preview {
+    position: relative;
+
+    &:hover {
+        .board-preview-container {
+            filter: brightness(90%);
+        }
+    }
+    .shadow-text {
+        text-shadow: 2px 3px 4px rgb(0 0 0 / 15%);
+    }
+    .board-preview-container {
+        height: 96px;
+        border-radius: 3px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #97a0af;
+        background-position: 50%;
+        transition: filter 0.2s;
+    }
+
+    .txt-on-borad-img {
+        position: absolute;
+        left: 10px;
+        top: 6px;
+        color: $clr4;
+        font-weight: 700;
+        z-index: 10;
+        width: calc(100% - 20px);
+    }
+    
+    .star {
+        position: absolute;
+        color: white;
+        height: 16px;
+        right: 10px;
+        bottom: 14px;
+        font-family: trellicons;
+        transform: translateX(0);
+        transition-duration: 0.15s;
+        transition-property: color, background-color, opacity, transform, width, margin;
+        width: 0;
+        z-index: 10;
+        opacity: 0;
+        cursor: pointer;
+        &::before {
+            content: "\e966";
+        }
+
+        &.full {
+            transform: none;
+            opacity: 1;
+            width: 16px;
+            &::before {
+                content: "\e967";
+                color: #f2d600;
+            }
+        }
+    }
+
+    &:hover {
+        .star {
+            opacity: 1;
+            transform: translateX(-14px);
+            &:hover {
+                transform: scale(1.1);
+                width: 16px;
+                height: 16px;
+            }
+
+            &.full {
+                transform: translateX(0);
+                &:hover {
+                    transform: scale(1.1);
+                    &::before {
+                        content: "\e966";
+                    }
+                }
+            }
+        }
+    }
+
+    &.new-board {
+        cursor: pointer;
+        border-radius: 3px;
+        .board-preview-container {
+            background-color: #091e420a;
+            @include flex;
+
+            .txt-on-borad-img {
+                color: #172b4d;
+                font-weight: 400;
+                position: relative;
+                left: 0;
+                top: 0;
+                width: auto;
+                text-shadow: none;
+            }
+        }
+
+        &:hover {
+            background-color: #091e4214;
+        }
+    }
+}

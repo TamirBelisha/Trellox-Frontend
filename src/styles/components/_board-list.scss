@@ -1,0 +1,113 @@
+.board-list-container {
+    .boards-area {
+        margin: 0 auto;
+        max-width: 1266px;
+        padding: 20px 0 0;
+
+        .boards-name {
+            display: flex;
+            margin: 0 0 0 40px;
+            padding: 0 0 11px;
+            position: relative;
+
+            .icon {
+                font-family: trellicons;
+                text-align: center;
+                left: -40px;
+                position: absolute;
+                font-size: 24px;
+                line-height: 32px;
+                width: 32px;
+            }
+            .title {
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 24px;
+                display: inline-block;
+                flex: 1;
+                font-size: 16px;
+                margin: 6px 0 0;
+            }
+        }
+        .board-list {
+            .boards {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 0;
+                justify-content: flex-start;
+
+                li {
+                    margin: 0 2% 2% 0;
+                    padding: 0;
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+
+    .starred {
+        .icon {
+            &:before {
+                content: "\e966";
+            }
+        }
+    }
+    .recentlyViewed {
+        .icon {
+            &:before {
+                content: "\e91b";
+            }
+        }
+    }
+    .yourWorkspace {
+        .icon {
+            &:before {
+                content: "\e91b";
+            }
+        }
+    }
+    .templates {
+        .icon {
+            &:before {
+                content: "\e91b";
+            }
+        }
+    }
+}
+
+/* SMALL & MOBILE */
+
+@media (max-width: 750px) {
+    .board-list-container {
+        .boards {
+            li {
+                width: calc(50% - 11px);
+            }
+        }
+    }
+}
+
+/* MEDIUM */
+
+@media (min-width: 750px) {
+    .board-list-container {
+        .boards {
+            li {
+                width: 31%;
+            }
+        }
+    }
+}
+
+/* LARGE */
+
+@media (min-width: 900px) {
+    .board-list-container {
+        .boards {
+            li {
+                width: 23%;
+            }
+        }
+    }
+}

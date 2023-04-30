@@ -1,0 +1,175 @@
+// COLORS FOR LABELS
+.color0 {
+    background-color: #61bd4f;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #519839;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #519839;
+        }
+    }
+}
+.color1 {
+    background-color: #f2d600;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #d9b51c;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #d9b51c;
+        }
+    }
+}
+.color2 {
+    background-color: #ff9f1a;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #cd8313;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #cd8313;
+        }
+    }
+}
+.color3 {
+    background-color: #eb5a46;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #b04632;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #b04632;
+        }
+    }
+}
+.color4 {
+    background-color: #c377e0;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #89609e;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #89609e;
+        }
+    }
+}
+.color5 {
+    background-color: #0079bf;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #055a8c;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #055a8c;
+        }
+    }
+}
+.color6 {
+    background-color: #00c2e0;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #0098b7;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #0098b7;
+        }
+    }
+}
+.color7 {
+    background-color: #51e898;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #4bbf6b;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #4bbf6b;
+        }
+    }
+}
+.color8 {
+    background-color: #ff78cb;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #c9558f;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #c9558f;
+        }
+    }
+}
+.color9 {
+    background-color: #344563;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #091e42;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #091e42;
+        }
+    }
+}
+.color10 {
+    background-color: #b3bac5;
+    &.label-in-label-picker {
+        &:hover {
+            box-shadow: -8px 0 #97a0af;
+        }
+    }
+    &.labels {
+        &:hover{
+            background-color: #97a0af;
+        }
+    }
+}
+
+.avatar-container {
+    background-color: #0052cc;
+    border-radius: 25em;
+    color: white;
+    display: flex;
+    float: left;
+    height: 32px;
+    margin: 0 4px 4px 0;
+    overflow: visible;
+    width: 32px;
+
+    img,
+    span {
+        max-width: 100%;
+        border-radius: 25em;
+        height: 32px;
+        object-fit: cover;
+        image-rendering: auto;
+        width: 32px;
+        border: 0;
+        text-align: center;
+        @include lighten
+    }
+    span {
+        @include flex;
+        padding: rem(4.5px);
+        font-size: rem(14px);
+        font-weight: 500;
+    }
+}

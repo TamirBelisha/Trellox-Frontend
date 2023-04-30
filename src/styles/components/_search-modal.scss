@@ -1,0 +1,105 @@
+.search-modal-container {
+    &.custom-modal-container {
+        top: 50px;
+        right: 78px;
+        @media (max-width: 900px) {
+            right: 10px;
+        }
+        .custom-modal-header {
+            display: none;
+        }
+
+        .search-modal {
+            margin-bottom: 14px;
+            padding-top: 3px;
+
+            .title {
+                color: #5e6c84;
+                font-size: 12px;
+                line-height: 16px;
+                margin-top: 16px;
+                font-weight: 600;
+                margin: 3px 12px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                margin: 0 6px;
+                box-sizing: border-box;
+                border-radius: 4px;
+                position: relative;
+                min-width: 0;
+                float: left;
+                width: 100%;
+                padding-left: 4px;
+                color: #172b4d;
+                height: 30px;
+                padding-left: 4px;
+                cursor: pointer;
+
+                .star {
+                    color: #091e42;
+                    font-family: trellicons;
+                    opacity: 0;
+                    transition-duration: 0.1s;
+                    transition-property: color, background, opacity, transform, width, margin;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "\e966";
+                    }
+
+                    &.full {
+                        opacity: 1;
+                        &::before {
+                            content: "\e967";
+                            color: #f2d600;
+                        }
+                    }
+                }
+
+                .bg {
+                    display: inline-block;
+                    flex: 0 0 auto;
+                    background-size: cover;
+                    border-radius: 2px;
+                    height: 16px;
+                    width: 20px;
+                    margin-inline-start: 12px;
+                }
+
+                .name {
+                    margin-inline-start: 12px;
+                }
+
+                &:hover {
+                    background-color: #ebecf0;
+                    .bg {
+                        filter: brightness(104%);
+                    }
+                    .star {
+                        opacity: 1;
+                        &:hover {
+                            color: #f2d600;
+                        }
+                        &.full {
+                            &:hover {
+                                &::before {
+                                    content: "\e966";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .not-found {
+                color: #5e6c84;
+                margin: 0;
+                padding: 36px 0;
+                text-align: center;
+            }
+        }
+    }
+}
