@@ -8,6 +8,7 @@
     "test:unit": "vitest --environment jsdom"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
     "axios": "^0.26.1",
     "chart.js": "^3.7.1",
     "fast-average-color": "^7.1.0",
